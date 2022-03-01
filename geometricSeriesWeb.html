@@ -13,13 +13,21 @@
 			then how many friends do you have in total?
 			</h2>
 		</header>
-		<div>
+		<main>
 			<div id="figureContainer">
 
-				<div class="circle" id="self">me</div>
+				<div class="circle" id="self">
+					<p class="insideCircle">me</p>
+				</div>
 			</div>
-			<p id="friendsTextResult">You have ___ total friends.</p>
-		</div>
+			<div id="textInputResultContainer">
+				<form >
+					<label for="friends">How many friends do you have?</label>
+					<input id="friendsInput" name="friends" type="number" min="0">
+				</form>
+				<p id="friendsTextResult">You have ___ total friends.</p>
+			</div>
+		</main>
 		<footer>
 		</footer>
 	</body>
