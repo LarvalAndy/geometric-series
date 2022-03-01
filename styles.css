@@ -1,0 +1,27 @@
+body {
+	background-color: #EDECE8;
+       	font-family: inconsolata;
+
+}
+h2 {
+	font-size: 20px;
+}
+.circle {	
+	position: absolute;
+	text-align: center;
+	z-index: -1;
+	margin: auto;
+	border-radius: 50%;
+	background-color: blue;
+	top: 50%;
+	left 50%;
+	transform: translate(-50%. -50%);
+}
+.insideCircle {
+
+
+}
+#self {
+	height: 20vw;
+	width: 20vw;
+}
