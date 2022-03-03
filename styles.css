@@ -16,10 +16,12 @@ h2 {
 	font-size: 20px;
 }
 #figureContainer {
+	display: flex;
+	flex-direction: column;
 	min-width: 300px;
 	width: 40vw;
 	min-height: 400px;
-	height: 50vw;
+	height: 80vh;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	margin: 20px;
 
@@ -28,7 +30,6 @@ h2 {
 	border-radius: 10px;	
 }
 .circle {
-	position: relative;
 	z-index: -1;
 	border-radius: 50%;
 	text-align: center;
@@ -37,6 +38,7 @@ h2 {
 
 }
 #self {
+	position: relative;
 	left: 50%;
 	transform: translate(-50%);
 	background-color: var(--light-green);
@@ -44,6 +46,18 @@ h2 {
 	width: 15vw;
 }
 .textInputResultContainer {
-
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
 	text-align: center;
+	padding: 20px;
+}
+.layer {
+	display: flex;
+	flex-direction: row;
+}
+.1layer {
+	background-color: var(--orange);
+	height: 6vw;
+	width: 6vw;
 }

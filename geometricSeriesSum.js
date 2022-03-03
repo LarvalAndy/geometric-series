@@ -1,28 +1,26 @@
 let baseNumber = 1;
-let friendsNumber = 6;
-let layers = 3;
+let friendsNumber = 1;
+let layers = 0;
 let sum = 0;
 let circsNum = 0;
 
-//gives friendsInput to friendsNumber
-document.getElementById("friendsInput").addEventListener("change", e => {
-	friendsNumber = e.target.value;
-	onNewNum(friendsNumber, layers);
-});
+document.getElementById("calculateButt").addEventListener("change", onNewNum(friendsNumber, layers));
 
-document.getElementById("layersInput").addEventListener("change", e => {
-	layers = e.target.value;
-	onNewNum(friendsNumber, layers);
-});
+//gives friendsInput to friendsNumber
+document.getElementById("friendsInput").addEventListener("change", e => {friendsNumber = e.target.value;});
+
+document.getElementById("layersInput").addEventListener("change", e => {layers = e.target.value - 1});
 
 
 function GeometricSeriesSum (a,r,n) { 
-	while (n > 0) {
+	while (n >= 0) {
+		console.log(`${r} ^ ${n}`);
 		circsNum = Math.pow(r, n);
+		console.log(`= ${circsNum}`);
 		sum += circsNum;
-		n--;
-		console.log(`add ${circsNum} circles to layer ${n}`);
-		//addCircles();
+		console.log(`sum = ${sum}`);
+		AddCircles(circsNum, n);
+		n--;	
 	}
 
 	/*previous solution was:
@@ -40,8 +38,14 @@ function GeometricSeriesSum (a,r,n) {
 	//not including the initial person
 	sum --;
 }
-function AddCircles (friendsNum, layers) {
-	console.log(friendsNum);
+function AddCircles (circsNum, layer) {
+	console.log(`added ${circsNum} circles to layer ${layer}`);
+	while (circsNum > 0 && layer > 0) {
+		let circ = document.createElement("div");
+		circ.className = "circle";
+		document.getElementById(`${layer}`).appendChild(circ);
+		circsNum --;
+	}
 }
 function onNewNum (friendsNumber, layers) {
 	sum = 0;
