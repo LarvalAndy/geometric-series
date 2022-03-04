@@ -4,15 +4,24 @@ let layers = 0;
 let sum = 0;
 let circsNum = 0;
 
-document.getElementById("calculateButt").addEventListener("change", onNewNum(friendsNumber, layers));
+document.getElementById("calculateButt").addEventListener("click", e => {
+		onNewNum(friendsNumber, layers);
+	});
 
 //gives friendsInput to friendsNumber
-document.getElementById("friendsInput").addEventListener("change", e => {friendsNumber = e.target.value;});
+document.getElementById("friendsInput").addEventListener("change", e => {
+		friendsNumber = e.target.value;
+		console.log(`friendsInput = ${friendsNumber}`)
+	});
 
-document.getElementById("layersInput").addEventListener("change", e => {layers = e.target.value - 1});
+document.getElementById("layersInput").addEventListener("change", e => {
+		layers = e.target.value - 1;
+		console.log(`layersInput = ${layers}`)
+	});
 
 
 function GeometricSeriesSum (a,r,n) { 
+	console.log("inside GeometricSeriesSum");
 	while (n >= 0) {
 		console.log(`${r} ^ ${n}`);
 		circsNum = Math.pow(r, n);
@@ -48,6 +57,7 @@ function AddCircles (circsNum, layer) {
 	}
 }
 function onNewNum (friendsNumber, layers) {
+	console.log("inside onNewNum");
 	sum = 0;
 	GeometricSeriesSum(baseNumber,friendsNumber,layers);
 	document.getElementById("friendsTextResult").innerHTML = `You have ${sum} friends.`;
