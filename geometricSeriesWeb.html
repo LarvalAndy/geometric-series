@@ -9,31 +9,38 @@
 		<nav>
 		</nav>
 		<header>
-			<h2 id="headerQuestion" >If all your friends have __ other friends,<br>and all of your friends' friends are friends of yours too,
-			then how many friends do you have in total?
-			</h2>
 		</header>
 		<main>
 			<div id="figureContainer">
 				<div class="layer" id="0">
 					<div class="circle" id="self">
-						<p class="insideCircle">me</p>
+						<p class="insideCircle"></p>
 					</div>
 				</div>
+				<!--
 				<div class="layer" id="1">
 				</div>
 				<div class="layer" id="2">
 				</div>
 				<div class="layer" id="3">
 				</div>
+				<div class="layer" id="4">
+				</div>
+				-->
+				
 			</div>
-			<div id="textInputResultContainer">
+			<div class="textInputResultContainer">
+				<h2 id="headerQuestion" >If all your friends have __ other friends,
+					and all of your friends' friends are friends of yours too,
+					then how many friends do you have in total?
+				</h2>
+
 				<label for="friends">How many friends do you have?<br></label>
-				<input id="friendsInput" name="friends" type="number" min="0">
+				<input id="friendsInput" name="friends" type="number" min="0" value="0">
 				<label for="layers"><br>How many layers do you want to see?<br></label>
-				<input id="layersInput" name="layers" type="number" min="1"><br>
+				<input id="layersInput" name="layers" type="number" min="1" value="0"><br>
 				<button id="calculateButt">Calculate</button>
- 				<p id="friendsTextResult">You have ___ total friends.</p>
+ 				<p id="friendsTextResult">You have 0 total friends.</p>
 			</div>
 		</main>
 		<footer>
